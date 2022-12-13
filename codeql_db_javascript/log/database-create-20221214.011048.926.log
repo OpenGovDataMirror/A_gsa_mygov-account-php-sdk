@@ -1,0 +1,1104 @@
+[2022-12-14 01:10:48] This is codeql database create codeql_db_javascript --language=javascript
+[2022-12-14 01:10:48] Log file was started late.
+[2022-12-14 01:10:48] [PROGRESS] database create> Initializing database at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript.
+[2022-12-14 01:10:48] Running plumbing command: codeql database init --language=javascript --source-root=/home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk --allow-missing-source-root=false --allow-already-existing -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript
+[2022-12-14 01:10:48] [PROGRESS] database init> Computing baseline information in /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk
+[2022-12-14 01:10:49] [PROGRESS] database init> Resolving extractor javascript.
+[2022-12-14 01:10:49] Calling plumbing command: codeql resolve languages --format=json
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/user/codeql/codeql/.codeqlmanifest.json
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/cpp/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/javascript/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/python/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/html/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/properties/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/go/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/ruby/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/csharp/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/xml/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/java/codeql-extractor.yml.
+[2022-12-14 01:10:49] [DETAILS] resolve languages> Parsing /home/user/codeql/codeql/csv/codeql-extractor.yml.
+[2022-12-14 01:10:49] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/cpp"
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/python"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/html"
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/properties"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/go"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/ruby"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/xml"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/user/codeql/codeql/csv"
+                            }
+                          ]
+                        }
+                      }
+[2022-12-14 01:10:49] [DETAILS] database init> Found candidate extractor root for javascript: /home/user/codeql/codeql/javascript.
+[2022-12-14 01:10:49] [PROGRESS] database init> Successfully loaded extractor JavaScript (javascript) from /home/user/codeql/codeql/javascript.
+[2022-12-14 01:10:49] [PROGRESS] database init> Created skeleton CodeQL database at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript. This in-progress database is ready to be populated by an extractor.
+[2022-12-14 01:10:49] Plumbing command codeql database init completed.
+[2022-12-14 01:10:49] [PROGRESS] database create> Running build command: []
+[2022-12-14 01:10:49] Running plumbing command: codeql database trace-command --working-dir=/home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk --index-traceless-dbs --no-db-cluster -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript
+[2022-12-14 01:10:49] Using autobuild script /home/user/codeql/codeql/javascript/tools/autobuild.sh.
+[2022-12-14 01:10:49] [PROGRESS] database trace-command> Running command in /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk: [/home/user/codeql/codeql/javascript/tools/autobuild.sh]
+[2022-12-14 01:10:49] [build-stdout] Single-threaded extraction.
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/cubrid/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/cubrid/index.html (47 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mssql/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mssql/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mysql/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mysql/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mysqli/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/mysqli/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/oci8/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/oci8/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/odbc/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/odbc/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/pdo/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/pdo/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/postgre/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/postgre/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/sqlite/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/sqlite/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/sqlsrv/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/sqlsrv/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/language/english/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/language/english/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/drivers/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/language/english/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/language/english/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/config/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/config/index.html (2 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/controllers/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/controllers/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/core/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/core/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/errors/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/errors/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/helpers/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/helpers/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/hooks/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/hooks/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/libraries/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/libraries/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/logs/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/logs/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/models/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/models/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/third_party/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/third_party/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/views/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/views/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/core/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/core/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/database/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/fonts/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/fonts/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/helpers/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/helpers/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/language/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/language/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/libraries/index.html
+[2022-12-14 01:10:49] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/libraries/index.html (1 ms)
+[2022-12-14 01:10:49] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/active_record.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/active_record.html (100 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/caching.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/caching.html (9 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/call_function.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/call_function.html (10 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/configuration.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/configuration.html (14 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/connecting.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/connecting.html (12 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/examples.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/examples.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/fields.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/fields.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/forge.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/forge.html (13 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/helpers.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/helpers.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/index.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/index.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/queries.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/queries.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/results.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/results.html (9 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/table_data.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/table_data.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/transactions.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/transactions.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/utilities.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/database/utilities.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/doc_style/index.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/doc_style/index.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/doc_style/template.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/doc_style/template.html (4 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/alternative_php.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/alternative_php.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/ancillary_classes.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/ancillary_classes.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/autoloader.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/autoloader.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/caching.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/caching.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/cli.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/cli.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/common_functions.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/common_functions.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/controllers.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/controllers.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/core_classes.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/core_classes.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/creating_drivers.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/creating_drivers.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/creating_libraries.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/creating_libraries.html (9 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/credits.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/credits.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/drivers.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/drivers.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/environments.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/environments.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/errors.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/errors.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/helpers.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/helpers.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/hooks.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/hooks.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/libraries.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/libraries.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/managing_apps.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/managing_apps.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/models.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/models.html (9 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/profiling.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/profiling.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/quick_reference.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/quick_reference.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/requirements.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/requirements.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/reserved_names.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/reserved_names.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/routing.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/routing.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/security.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/security.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/styleguide.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/styleguide.html (15 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/urls.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/urls.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/views.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/general/views.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/array_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/array_helper.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/captcha_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/captcha_helper.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/cookie_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/cookie_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/date_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/date_helper.html (13 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/directory_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/directory_helper.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/download_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/download_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/email_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/email_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/file_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/file_helper.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/form_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/form_helper.html (13 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/html_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/html_helper.html (13 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/inflector_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/inflector_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/language_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/language_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/number_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/number_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/path_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/path_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/security_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/security_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/smiley_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/smiley_helper.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/string_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/string_helper.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/text_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/text_helper.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/typography_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/typography_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/url_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/url_helper.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/xml_helper.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/helpers/xml_helper.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/downloads.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/downloads.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/index.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/index.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/troubleshooting.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/troubleshooting.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_120.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_120.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_130.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_130.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_131.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_131.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_132.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_132.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_133.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_133.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_140.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_140.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_141.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_141.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_150.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_150.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_152.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_152.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_153.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_153.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_154.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_154.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_160.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_160.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_161.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_161.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_162.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_162.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_163.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_163.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_170.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_170.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_171.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_171.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_172.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_172.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_200.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_200.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_201.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_201.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_202.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_202.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_203.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_203.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_210.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_210.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_211.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_211.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_212.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_212.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_213.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_213.html (5 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_b11.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrade_b11.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrading.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/installation/upgrading.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/benchmark.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/benchmark.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/caching.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/caching.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/calendar.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/calendar.html (10 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/cart.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/cart.html (9 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/config.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/config.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/email.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/email.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/encryption.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/encryption.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/file_uploading.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/file_uploading.html (12 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/form_validation.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/form_validation.html (32 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/ftp.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/ftp.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/image_lib.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/image_lib.html (18 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/input.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/input.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/javascript.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/javascript.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/language.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/language.html (6 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/loader.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/loader.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/migration.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/migration.html (23 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/output.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/output.html (15 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/pagination.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/pagination.html (17 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/parser.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/parser.html (12 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/security.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/security.html (8 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/sessions.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/sessions.html (17 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/table.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/table.html (11 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/trackback.html
+[2022-12-14 01:10:50] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/trackback.html (7 ms)
+[2022-12-14 01:10:50] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/typography.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/typography.html (8 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/unit_testing.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/unit_testing.html (7 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/uri.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/uri.html (10 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/user_agent.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/user_agent.html (9 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/xmlrpc.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/xmlrpc.html (11 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/zip.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/libraries/zip.html (6 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/appflow.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/appflow.html (5 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/at_a_glance.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/at_a_glance.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/cheatsheets.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/cheatsheets.html (5 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/features.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/features.html (5 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/getting_started.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/getting_started.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/goals.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/goals.html (3 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/index.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/index.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/mvc.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/overview/mvc.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/conclusion.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/conclusion.html (3 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/create_news_items.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/create_news_items.html (6 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/hard_coded_pages.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/hard_coded_pages.html (5 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/index.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/index.html (3 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/news_section.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/news_section.html (6 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/static_pages.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/tutorial/static_pages.html (7 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/index.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/application/index.html (0 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/index.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/system/index.html (0 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/changelog.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/changelog.html (44 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/index.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/index.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/license.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/license.html (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/toc.html
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/toc.html (9 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/assets/js/bootstrap.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/assets/js/bootstrap.js (326 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/moo.fx.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/moo.fx.js (15 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/nav.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/nav.js (27 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/prototype.lite.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/prototype.lite.js (16 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/user_guide_menu.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/user_guide/nav/user_guide_menu.js (2 ms)
+[2022-12-14 01:10:51] [build-stderr] No externs trap cache found
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_ext.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_ext.js (7 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_permissions.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_permissions.js (9 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_dom.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_dom.js (59 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_usercontent.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_usercontent.js (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webstorage.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webstorage.js (10 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/fileapi.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/fileapi.js (77 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_xml.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_xml.js (28 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_css.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_css.js (94 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_range.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_range.js (16 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js (58 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/whatwg_encoding.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/whatwg_encoding.js (4 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_css3d.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_css3d.js (12 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/mediasource.js
+[2022-12-14 01:10:51] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/mediasource.js (12 ms)
+[2022-12-14 01:10:51] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom2.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom2.js (157 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_event.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_event.js (11 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/window.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/window.js (8 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_notifications.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_notifications.js (14 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/streamsapi.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/streamsapi.js (40 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_rtc.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_rtc.js (145 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_midi.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_midi.js (16 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_xml.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_xml.js (3 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_event3.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_event3.js (4 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_gamepad.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_gamepad.js (5 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/intl.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/intl.js (15 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/page_visibility.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/page_visibility.js (1 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom3.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom3.js (50 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webgl.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webgl.js (193 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_dom.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_dom.js (66 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_css.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_css.js (14 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/chrome.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/chrome.js (32 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js (3 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom4.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom4.js (2 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js (5 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_css.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_css.js (115 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js (4 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom1.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_dom1.js (53 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js (5 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_event.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_event.js (2 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_vml.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_vml.js (2 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_encoding.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_encoding.js (3 ms)
+[2022-12-14 01:10:52] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js
+[2022-12-14 01:10:52] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js (35 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js (5 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_event.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_event.js (32 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/url.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/url.js (8 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js (2 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js (2 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js (21 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/fetchapi.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/fetchapi.js (26 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_touch_event.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_touch_event.js (11 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/html5.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/html5.js (215 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/iphone.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/iphone.js (7 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_event.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/ie_event.js (14 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/flash.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/flash.js (13 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_dom.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/webkit_dom.js (19 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_geolocation.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_geolocation.js (7 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js (16 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_css.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/gecko_css.js (15 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_selectors.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/web/w3c_selectors.js (5 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/cluster.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/cluster.js (61 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/string_decoder.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/string_decoder.js (4 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/console.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/console.js (1 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/punycode.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/punycode.js (6 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/http.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/http.js (42 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/tty.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/tty.js (7 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/globals.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/globals.js (110 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/child_process.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/child_process.js (58 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/path.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/path.js (17 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/buffer.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/buffer.js (9 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/v8.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/v8.js (5 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/dgram.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/dgram.js (15 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/querystring.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/querystring.js (8 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/readline.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/readline.js (20 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/os.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/os.js (16 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js (1 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/tls.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/tls.js (29 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/https.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/https.js (14 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/constants.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/constants.js (87 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/dns.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/dns.js (21 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/events.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/events.js (9 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/module.js
+[2022-12-14 01:10:53] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/module.js (5 ms)
+[2022-12-14 01:10:53] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/crypto.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/crypto.js (61 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/repl.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/repl.js (6 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/timers.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/timers.js (5 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/domain.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/domain.js (6 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/sys.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/sys.js (1 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/vm.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/vm.js (9 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/fs.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/fs.js (88 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/url.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/url.js (4 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/util.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/util.js (14 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/stream.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/stream.js (42 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/assert.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/assert.js (6 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/zlib.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/zlib.js (22 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/net.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/net.js (24 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/process.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/nodejs/process.js (1 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es6_collections.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es6_collections.js (8 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es2017.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es2017.js (1 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es2016.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es2016.js (0 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/intl.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/intl.js (8 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es6.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es6.js (59 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es3.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es3.js (93 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es5.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/es5.js (9 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/proxy.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/es/proxy.js (1 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/spidermonkey.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/spidermonkey.js (1 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/v8.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/v8.js (5 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/rhino.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/rhino.js (4 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/jsshell.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/vm/jsshell.js (29 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/bdd.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/bdd.js (4 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/jquery-3.2.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/jquery-3.2.js (103 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/should.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/should.js (12 ms)
+[2022-12-14 01:10:54] [build-stdout] Extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/vows.js
+[2022-12-14 01:10:54] [build-stdout] Done extracting /home/user/codeql/codeql/javascript/tools/data/externs/lib/vows.js (13 ms)
+[2022-12-14 01:10:54] Plumbing command codeql database trace-command completed.
+[2022-12-14 01:10:54] [PROGRESS] database create> Finalizing database at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript.
+[2022-12-14 01:10:54] Running plumbing command: codeql database finalize --mode=normal --no-db-cluster -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript
+[2022-12-14 01:10:54] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript...
+[2022-12-14 01:10:54] Running plumbing command: codeql dataset import --dbscheme=/home/user/codeql/codeql/javascript/semmlecode.javascript.dbscheme -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/trap/javascript
+[2022-12-14 01:10:54] Clearing disk cache since the version file /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript/default/cache/version does not exist
+[2022-12-14 01:10:54] Tuple pool not found. Clearing relations with cached strings
+[2022-12-14 01:10:54] Trimming disk cache at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript/default/cache in mode brutal.
+[2022-12-14 01:10:54] Sequence stamp origin is -6377111370861755604
+[2022-12-14 01:10:54] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2022-12-14 01:10:54] Unpausing evaluation
+[2022-12-14 01:10:54] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2022-12-14 01:10:54] Unpausing evaluation
+[2022-12-14 01:10:54] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2022-12-14 01:10:54] Unpausing evaluation
+[2022-12-14 01:10:54] Trimming completed (15ms): Purged everything.
+[2022-12-14 01:10:54] Scanning for files in /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/trap/javascript
+[2022-12-14 01:10:55] Importing index.html.trap.gz (1 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (2 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (3 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (4 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (5 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (6 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (7 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (8 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (9 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (10 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (11 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (12 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (13 of 292)
+[2022-12-14 01:10:55] Importing bootstrap.js.trap.gz (14 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (15 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (16 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (17 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (18 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (19 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (20 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (21 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (22 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (23 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (24 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (25 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (26 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (27 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (28 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (29 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (30 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (31 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (32 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (33 of 292)
+[2022-12-14 01:10:55] Importing changelog.html.trap.gz (34 of 292)
+[2022-12-14 01:10:55] Importing active_record.html.trap.gz (35 of 292)
+[2022-12-14 01:10:55] Importing caching.html.trap.gz (36 of 292)
+[2022-12-14 01:10:55] Importing call_function.html.trap.gz (37 of 292)
+[2022-12-14 01:10:55] Importing configuration.html.trap.gz (38 of 292)
+[2022-12-14 01:10:55] Importing connecting.html.trap.gz (39 of 292)
+[2022-12-14 01:10:55] Importing examples.html.trap.gz (40 of 292)
+[2022-12-14 01:10:55] Importing fields.html.trap.gz (41 of 292)
+[2022-12-14 01:10:55] Importing forge.html.trap.gz (42 of 292)
+[2022-12-14 01:10:55] Importing helpers.html.trap.gz (43 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (44 of 292)
+[2022-12-14 01:10:55] Importing queries.html.trap.gz (45 of 292)
+[2022-12-14 01:10:55] Importing results.html.trap.gz (46 of 292)
+[2022-12-14 01:10:55] Importing table_data.html.trap.gz (47 of 292)
+[2022-12-14 01:10:55] Importing transactions.html.trap.gz (48 of 292)
+[2022-12-14 01:10:55] Importing utilities.html.trap.gz (49 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (50 of 292)
+[2022-12-14 01:10:55] Importing template.html.trap.gz (51 of 292)
+[2022-12-14 01:10:55] Importing alternative_php.html.trap.gz (52 of 292)
+[2022-12-14 01:10:55] Importing ancillary_classes.html.trap.gz (53 of 292)
+[2022-12-14 01:10:55] Importing autoloader.html.trap.gz (54 of 292)
+[2022-12-14 01:10:55] Importing caching.html.trap.gz (55 of 292)
+[2022-12-14 01:10:55] Importing cli.html.trap.gz (56 of 292)
+[2022-12-14 01:10:55] Importing common_functions.html.trap.gz (57 of 292)
+[2022-12-14 01:10:55] Importing controllers.html.trap.gz (58 of 292)
+[2022-12-14 01:10:55] Importing core_classes.html.trap.gz (59 of 292)
+[2022-12-14 01:10:55] Importing creating_drivers.html.trap.gz (60 of 292)
+[2022-12-14 01:10:55] Importing creating_libraries.html.trap.gz (61 of 292)
+[2022-12-14 01:10:55] Importing credits.html.trap.gz (62 of 292)
+[2022-12-14 01:10:55] Importing drivers.html.trap.gz (63 of 292)
+[2022-12-14 01:10:55] Importing environments.html.trap.gz (64 of 292)
+[2022-12-14 01:10:55] Importing errors.html.trap.gz (65 of 292)
+[2022-12-14 01:10:55] Importing helpers.html.trap.gz (66 of 292)
+[2022-12-14 01:10:55] Importing hooks.html.trap.gz (67 of 292)
+[2022-12-14 01:10:55] Importing libraries.html.trap.gz (68 of 292)
+[2022-12-14 01:10:55] Importing managing_apps.html.trap.gz (69 of 292)
+[2022-12-14 01:10:55] Importing models.html.trap.gz (70 of 292)
+[2022-12-14 01:10:55] Importing profiling.html.trap.gz (71 of 292)
+[2022-12-14 01:10:55] Importing quick_reference.html.trap.gz (72 of 292)
+[2022-12-14 01:10:55] Importing requirements.html.trap.gz (73 of 292)
+[2022-12-14 01:10:55] Importing reserved_names.html.trap.gz (74 of 292)
+[2022-12-14 01:10:55] Importing routing.html.trap.gz (75 of 292)
+[2022-12-14 01:10:55] Importing security.html.trap.gz (76 of 292)
+[2022-12-14 01:10:55] Importing styleguide.html.trap.gz (77 of 292)
+[2022-12-14 01:10:55] Importing urls.html.trap.gz (78 of 292)
+[2022-12-14 01:10:55] Importing views.html.trap.gz (79 of 292)
+[2022-12-14 01:10:55] Importing array_helper.html.trap.gz (80 of 292)
+[2022-12-14 01:10:55] Importing captcha_helper.html.trap.gz (81 of 292)
+[2022-12-14 01:10:55] Importing cookie_helper.html.trap.gz (82 of 292)
+[2022-12-14 01:10:55] Importing date_helper.html.trap.gz (83 of 292)
+[2022-12-14 01:10:55] Importing directory_helper.html.trap.gz (84 of 292)
+[2022-12-14 01:10:55] Importing download_helper.html.trap.gz (85 of 292)
+[2022-12-14 01:10:55] Importing email_helper.html.trap.gz (86 of 292)
+[2022-12-14 01:10:55] Importing file_helper.html.trap.gz (87 of 292)
+[2022-12-14 01:10:55] Importing form_helper.html.trap.gz (88 of 292)
+[2022-12-14 01:10:55] Importing html_helper.html.trap.gz (89 of 292)
+[2022-12-14 01:10:55] Importing inflector_helper.html.trap.gz (90 of 292)
+[2022-12-14 01:10:55] Importing language_helper.html.trap.gz (91 of 292)
+[2022-12-14 01:10:55] Importing number_helper.html.trap.gz (92 of 292)
+[2022-12-14 01:10:55] Importing path_helper.html.trap.gz (93 of 292)
+[2022-12-14 01:10:55] Importing security_helper.html.trap.gz (94 of 292)
+[2022-12-14 01:10:55] Importing smiley_helper.html.trap.gz (95 of 292)
+[2022-12-14 01:10:55] Importing string_helper.html.trap.gz (96 of 292)
+[2022-12-14 01:10:55] Importing text_helper.html.trap.gz (97 of 292)
+[2022-12-14 01:10:55] Importing typography_helper.html.trap.gz (98 of 292)
+[2022-12-14 01:10:55] Importing url_helper.html.trap.gz (99 of 292)
+[2022-12-14 01:10:55] Importing xml_helper.html.trap.gz (100 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (101 of 292)
+[2022-12-14 01:10:55] Importing downloads.html.trap.gz (102 of 292)
+[2022-12-14 01:10:55] Importing index.html.trap.gz (103 of 292)
+[2022-12-14 01:10:55] Importing troubleshooting.html.trap.gz (104 of 292)
+[2022-12-14 01:10:55] Importing upgrade_120.html.trap.gz (105 of 292)
+[2022-12-14 01:10:55] Importing upgrade_130.html.trap.gz (106 of 292)
+[2022-12-14 01:10:55] Importing upgrade_131.html.trap.gz (107 of 292)
+[2022-12-14 01:10:55] Importing upgrade_132.html.trap.gz (108 of 292)
+[2022-12-14 01:10:55] Importing upgrade_133.html.trap.gz (109 of 292)
+[2022-12-14 01:10:55] Importing upgrade_140.html.trap.gz (110 of 292)
+[2022-12-14 01:10:55] Importing upgrade_141.html.trap.gz (111 of 292)
+[2022-12-14 01:10:55] Importing upgrade_150.html.trap.gz (112 of 292)
+[2022-12-14 01:10:55] Importing upgrade_152.html.trap.gz (113 of 292)
+[2022-12-14 01:10:55] Importing upgrade_153.html.trap.gz (114 of 292)
+[2022-12-14 01:10:55] Importing upgrade_154.html.trap.gz (115 of 292)
+[2022-12-14 01:10:55] Importing upgrade_160.html.trap.gz (116 of 292)
+[2022-12-14 01:10:55] Importing upgrade_161.html.trap.gz (117 of 292)
+[2022-12-14 01:10:55] Importing upgrade_162.html.trap.gz (118 of 292)
+[2022-12-14 01:10:55] Importing upgrade_163.html.trap.gz (119 of 292)
+[2022-12-14 01:10:55] Importing upgrade_170.html.trap.gz (120 of 292)
+[2022-12-14 01:10:55] Importing upgrade_171.html.trap.gz (121 of 292)
+[2022-12-14 01:10:55] Importing upgrade_172.html.trap.gz (122 of 292)
+[2022-12-14 01:10:55] Importing upgrade_200.html.trap.gz (123 of 292)
+[2022-12-14 01:10:55] Importing upgrade_201.html.trap.gz (124 of 292)
+[2022-12-14 01:10:55] Importing upgrade_202.html.trap.gz (125 of 292)
+[2022-12-14 01:10:55] Importing upgrade_203.html.trap.gz (126 of 292)
+[2022-12-14 01:10:55] Importing upgrade_210.html.trap.gz (127 of 292)
+[2022-12-14 01:10:55] Importing upgrade_211.html.trap.gz (128 of 292)
+[2022-12-14 01:10:55] Importing upgrade_212.html.trap.gz (129 of 292)
+[2022-12-14 01:10:55] Importing upgrade_213.html.trap.gz (130 of 292)
+[2022-12-14 01:10:55] Importing upgrade_b11.html.trap.gz (131 of 292)
+[2022-12-14 01:10:55] Importing upgrading.html.trap.gz (132 of 292)
+[2022-12-14 01:10:55] Importing benchmark.html.trap.gz (133 of 292)
+[2022-12-14 01:10:55] Importing caching.html.trap.gz (134 of 292)
+[2022-12-14 01:10:55] Importing calendar.html.trap.gz (135 of 292)
+[2022-12-14 01:10:55] Importing cart.html.trap.gz (136 of 292)
+[2022-12-14 01:10:55] Importing config.html.trap.gz (137 of 292)
+[2022-12-14 01:10:55] Importing email.html.trap.gz (138 of 292)
+[2022-12-14 01:10:55] Importing encryption.html.trap.gz (139 of 292)
+[2022-12-14 01:10:55] Importing file_uploading.html.trap.gz (140 of 292)
+[2022-12-14 01:10:55] Importing form_validation.html.trap.gz (141 of 292)
+[2022-12-14 01:10:55] Importing ftp.html.trap.gz (142 of 292)
+[2022-12-14 01:10:55] Importing image_lib.html.trap.gz (143 of 292)
+[2022-12-14 01:10:55] Importing input.html.trap.gz (144 of 292)
+[2022-12-14 01:10:55] Importing javascript.html.trap.gz (145 of 292)
+[2022-12-14 01:10:55] Importing language.html.trap.gz (146 of 292)
+[2022-12-14 01:10:55] Importing loader.html.trap.gz (147 of 292)
+[2022-12-14 01:10:55] Importing migration.html.trap.gz (148 of 292)
+[2022-12-14 01:10:55] Importing output.html.trap.gz (149 of 292)
+[2022-12-14 01:10:55] Importing pagination.html.trap.gz (150 of 292)
+[2022-12-14 01:10:55] Importing parser.html.trap.gz (151 of 292)
+[2022-12-14 01:10:55] Importing security.html.trap.gz (152 of 292)
+[2022-12-14 01:10:55] Importing sessions.html.trap.gz (153 of 292)
+[2022-12-14 01:10:55] Importing table.html.trap.gz (154 of 292)
+[2022-12-14 01:10:55] Importing trackback.html.trap.gz (155 of 292)
+[2022-12-14 01:10:55] Importing typography.html.trap.gz (156 of 292)
+[2022-12-14 01:10:55] Importing unit_testing.html.trap.gz (157 of 292)
+[2022-12-14 01:10:55] Importing uri.html.trap.gz (158 of 292)
+[2022-12-14 01:10:55] Importing user_agent.html.trap.gz (159 of 292)
+[2022-12-14 01:10:55] Importing xmlrpc.html.trap.gz (160 of 292)
+[2022-12-14 01:10:55] Importing zip.html.trap.gz (161 of 292)
+[2022-12-14 01:10:55] Importing license.html.trap.gz (162 of 292)
+[2022-12-14 01:10:55] Importing moo.fx.js.trap.gz (163 of 292)
+[2022-12-14 01:10:56] Importing nav.js.trap.gz (164 of 292)
+[2022-12-14 01:10:56] Importing prototype.lite.js.trap.gz (165 of 292)
+[2022-12-14 01:10:56] Importing user_guide_menu.js.trap.gz (166 of 292)
+[2022-12-14 01:10:56] Importing appflow.html.trap.gz (167 of 292)
+[2022-12-14 01:10:56] Importing at_a_glance.html.trap.gz (168 of 292)
+[2022-12-14 01:10:56] Importing cheatsheets.html.trap.gz (169 of 292)
+[2022-12-14 01:10:56] Importing features.html.trap.gz (170 of 292)
+[2022-12-14 01:10:56] Importing getting_started.html.trap.gz (171 of 292)
+[2022-12-14 01:10:56] Importing goals.html.trap.gz (172 of 292)
+[2022-12-14 01:10:56] Importing index.html.trap.gz (173 of 292)
+[2022-12-14 01:10:56] Importing mvc.html.trap.gz (174 of 292)
+[2022-12-14 01:10:56] Importing toc.html.trap.gz (175 of 292)
+[2022-12-14 01:10:56] Importing conclusion.html.trap.gz (176 of 292)
+[2022-12-14 01:10:56] Importing create_news_items.html.trap.gz (177 of 292)
+[2022-12-14 01:10:56] Importing hard_coded_pages.html.trap.gz (178 of 292)
+[2022-12-14 01:10:56] Importing index.html.trap.gz (179 of 292)
+[2022-12-14 01:10:56] Importing news_section.html.trap.gz (180 of 292)
+[2022-12-14 01:10:56] Importing static_pages.html.trap.gz (181 of 292)
+[2022-12-14 01:10:56] Importing es2016.js.trap.gz (182 of 292)
+[2022-12-14 01:10:56] Importing es2017.js.trap.gz (183 of 292)
+[2022-12-14 01:10:56] Importing es3.js.trap.gz (184 of 292)
+[2022-12-14 01:10:56] Importing es5.js.trap.gz (185 of 292)
+[2022-12-14 01:10:56] Importing es6.js.trap.gz (186 of 292)
+[2022-12-14 01:10:56] Importing es6_collections.js.trap.gz (187 of 292)
+[2022-12-14 01:10:56] Importing intl.js.trap.gz (188 of 292)
+[2022-12-14 01:10:56] Importing proxy.js.trap.gz (189 of 292)
+[2022-12-14 01:10:56] Importing bdd.js.trap.gz (190 of 292)
+[2022-12-14 01:10:56] Importing jquery-3.2.js.trap.gz (191 of 292)
+[2022-12-14 01:10:56] Importing should.js.trap.gz (192 of 292)
+[2022-12-14 01:10:56] Importing vows.js.trap.gz (193 of 292)
+[2022-12-14 01:10:56] Importing assert.js.trap.gz (194 of 292)
+[2022-12-14 01:10:56] Importing assert_legacy.js.trap.gz (195 of 292)
+[2022-12-14 01:10:56] Importing buffer.js.trap.gz (196 of 292)
+[2022-12-14 01:10:56] Importing child_process.js.trap.gz (197 of 292)
+[2022-12-14 01:10:56] Importing cluster.js.trap.gz (198 of 292)
+[2022-12-14 01:10:56] Importing console.js.trap.gz (199 of 292)
+[2022-12-14 01:10:56] Importing constants.js.trap.gz (200 of 292)
+[2022-12-14 01:10:56] Importing crypto.js.trap.gz (201 of 292)
+[2022-12-14 01:10:56] Importing dgram.js.trap.gz (202 of 292)
+[2022-12-14 01:10:56] Importing dns.js.trap.gz (203 of 292)
+[2022-12-14 01:10:56] Importing domain.js.trap.gz (204 of 292)
+[2022-12-14 01:10:56] Importing events.js.trap.gz (205 of 292)
+[2022-12-14 01:10:56] Importing fs.js.trap.gz (206 of 292)
+[2022-12-14 01:10:56] Importing globals.js.trap.gz (207 of 292)
+[2022-12-14 01:10:56] Importing http.js.trap.gz (208 of 292)
+[2022-12-14 01:10:56] Importing https.js.trap.gz (209 of 292)
+[2022-12-14 01:10:56] Importing module.js.trap.gz (210 of 292)
+[2022-12-14 01:10:56] Importing net.js.trap.gz (211 of 292)
+[2022-12-14 01:10:56] Importing os.js.trap.gz (212 of 292)
+[2022-12-14 01:10:56] Importing path.js.trap.gz (213 of 292)
+[2022-12-14 01:10:56] Importing process.js.trap.gz (214 of 292)
+[2022-12-14 01:10:56] Importing punycode.js.trap.gz (215 of 292)
+[2022-12-14 01:10:56] Importing querystring.js.trap.gz (216 of 292)
+[2022-12-14 01:10:56] Importing readline.js.trap.gz (217 of 292)
+[2022-12-14 01:10:56] Importing repl.js.trap.gz (218 of 292)
+[2022-12-14 01:10:56] Importing stream.js.trap.gz (219 of 292)
+[2022-12-14 01:10:56] Importing string_decoder.js.trap.gz (220 of 292)
+[2022-12-14 01:10:56] Importing sys.js.trap.gz (221 of 292)
+[2022-12-14 01:10:56] Importing timers.js.trap.gz (222 of 292)
+[2022-12-14 01:10:56] Importing tls.js.trap.gz (223 of 292)
+[2022-12-14 01:10:56] Importing tty.js.trap.gz (224 of 292)
+[2022-12-14 01:10:56] Importing url.js.trap.gz (225 of 292)
+[2022-12-14 01:10:56] Importing util.js.trap.gz (226 of 292)
+[2022-12-14 01:10:56] Importing v8.js.trap.gz (227 of 292)
+[2022-12-14 01:10:56] Importing vm.js.trap.gz (228 of 292)
+[2022-12-14 01:10:56] Importing zlib.js.trap.gz (229 of 292)
+[2022-12-14 01:10:56] Importing jsshell.js.trap.gz (230 of 292)
+[2022-12-14 01:10:56] Importing rhino.js.trap.gz (231 of 292)
+[2022-12-14 01:10:56] Importing spidermonkey.js.trap.gz (232 of 292)
+[2022-12-14 01:10:56] Importing v8.js.trap.gz (233 of 292)
+[2022-12-14 01:10:56] Importing chrome.js.trap.gz (234 of 292)
+[2022-12-14 01:10:56] Importing fetchapi.js.trap.gz (235 of 292)
+[2022-12-14 01:10:56] Importing fileapi.js.trap.gz (236 of 292)
+[2022-12-14 01:10:56] Importing flash.js.trap.gz (237 of 292)
+[2022-12-14 01:10:56] Importing gecko_css.js.trap.gz (238 of 292)
+[2022-12-14 01:10:56] Importing gecko_dom.js.trap.gz (239 of 292)
+[2022-12-14 01:10:56] Importing gecko_event.js.trap.gz (240 of 292)
+[2022-12-14 01:10:56] Importing gecko_ext.js.trap.gz (241 of 292)
+[2022-12-14 01:10:56] Importing gecko_xml.js.trap.gz (242 of 292)
+[2022-12-14 01:10:56] Importing html5.js.trap.gz (243 of 292)
+[2022-12-14 01:10:57] Importing ie_css.js.trap.gz (244 of 292)
+[2022-12-14 01:10:57] Importing ie_dom.js.trap.gz (245 of 292)
+[2022-12-14 01:10:57] Importing ie_event.js.trap.gz (246 of 292)
+[2022-12-14 01:10:57] Importing ie_vml.js.trap.gz (247 of 292)
+[2022-12-14 01:10:57] Importing intl.js.trap.gz (248 of 292)
+[2022-12-14 01:10:57] Importing iphone.js.trap.gz (249 of 292)
+[2022-12-14 01:10:57] Importing mediasource.js.trap.gz (250 of 292)
+[2022-12-14 01:10:57] Importing page_visibility.js.trap.gz (251 of 292)
+[2022-12-14 01:10:57] Importing streamsapi.js.trap.gz (252 of 292)
+[2022-12-14 01:10:57] Importing url.js.trap.gz (253 of 292)
+[2022-12-14 01:10:57] Importing w3c_anim_timing.js.trap.gz (254 of 292)
+[2022-12-14 01:10:57] Importing w3c_batterystatus.js.trap.gz (255 of 292)
+[2022-12-14 01:10:57] Importing w3c_css.js.trap.gz (256 of 292)
+[2022-12-14 01:10:57] Importing w3c_css3d.js.trap.gz (257 of 292)
+[2022-12-14 01:10:57] Importing w3c_device_sensor_event.js.trap.gz (258 of 292)
+[2022-12-14 01:10:57] Importing w3c_dom1.js.trap.gz (259 of 292)
+[2022-12-14 01:10:57] Importing w3c_dom2.js.trap.gz (260 of 292)
+[2022-12-14 01:10:57] Importing w3c_dom3.js.trap.gz (261 of 292)
+[2022-12-14 01:10:57] Importing w3c_dom4.js.trap.gz (262 of 292)
+[2022-12-14 01:10:57] Importing w3c_elementtraversal.js.trap.gz (263 of 292)
+[2022-12-14 01:10:57] Importing w3c_encoding.js.trap.gz (264 of 292)
+[2022-12-14 01:10:57] Importing w3c_event.js.trap.gz (265 of 292)
+[2022-12-14 01:10:57] Importing w3c_event3.js.trap.gz (266 of 292)
+[2022-12-14 01:10:57] Importing w3c_gamepad.js.trap.gz (267 of 292)
+[2022-12-14 01:10:57] Importing w3c_geolocation.js.trap.gz (268 of 292)
+[2022-12-14 01:10:57] Importing w3c_indexeddb.js.trap.gz (269 of 292)
+[2022-12-14 01:10:57] Importing w3c_midi.js.trap.gz (270 of 292)
+[2022-12-14 01:10:57] Importing w3c_navigation_timing.js.trap.gz (271 of 292)
+[2022-12-14 01:10:57] Importing w3c_permissions.js.trap.gz (272 of 292)
+[2022-12-14 01:10:57] Importing w3c_pointer_events.js.trap.gz (273 of 292)
+[2022-12-14 01:10:57] Importing w3c_range.js.trap.gz (274 of 292)
+[2022-12-14 01:10:57] Importing w3c_requestidlecallback.js.trap.gz (275 of 292)
+[2022-12-14 01:10:57] Importing w3c_rtc.js.trap.gz (276 of 292)
+[2022-12-14 01:10:57] Importing w3c_screen_orientation.js.trap.gz (277 of 292)
+[2022-12-14 01:10:57] Importing w3c_selectors.js.trap.gz (278 of 292)
+[2022-12-14 01:10:57] Importing w3c_serviceworker.js.trap.gz (279 of 292)
+[2022-12-14 01:10:57] Importing w3c_touch_event.js.trap.gz (280 of 292)
+[2022-12-14 01:10:57] Importing w3c_webcrypto.js.trap.gz (281 of 292)
+[2022-12-14 01:10:57] Importing w3c_xml.js.trap.gz (282 of 292)
+[2022-12-14 01:10:57] Importing webgl.js.trap.gz (283 of 292)
+[2022-12-14 01:10:57] Importing webkit_css.js.trap.gz (284 of 292)
+[2022-12-14 01:10:57] Importing webkit_dom.js.trap.gz (285 of 292)
+[2022-12-14 01:10:57] Importing webkit_event.js.trap.gz (286 of 292)
+[2022-12-14 01:10:57] Importing webkit_notifications.js.trap.gz (287 of 292)
+[2022-12-14 01:10:57] Importing webkit_usercontent.js.trap.gz (288 of 292)
+[2022-12-14 01:10:57] Importing webstorage.js.trap.gz (289 of 292)
+[2022-12-14 01:10:57] Importing whatwg_encoding.js.trap.gz (290 of 292)
+[2022-12-14 01:10:57] Importing window.js.trap.gz (291 of 292)
+[2022-12-14 01:10:57] Importing sourceLocationPrefix.trap.gz (292 of 292)
+[2022-12-14 01:10:57] Merging 1 fragment for files.
+[2022-12-14 01:10:57] Merging 1 fragment for folders.
+[2022-12-14 01:10:57] Merging 1 fragment for containerparent.
+[2022-12-14 01:10:57] Merging 3 fragments for locations_default.
+[2022-12-14 01:10:57] Merging 3 fragments for hasLocation.
+[2022-12-14 01:10:57] Merging 1 fragment for extraction_data.
+[2022-12-14 01:10:57] Merging 1 fragment for scopes.
+[2022-12-14 01:10:57] Merging 1 fragment for xmlElements.
+[2022-12-14 01:10:57] Merging 1 fragment for xmllocations.
+[2022-12-14 01:10:57] Merging 1 fragment for numlines.
+[2022-12-14 01:10:57] Merging 1 fragment for filetype.
+[2022-12-14 01:10:57] Merging 1 fragment for extraction_time.
+[2022-12-14 01:10:57] Merging 1 fragment for comments.
+[2022-12-14 01:10:57] Merging 1 fragment for indentation.
+[2022-12-14 01:10:57] Merging 2 fragments for tokeninfo.
+[2022-12-14 01:10:57] Merging 1 fragment for next_token.
+[2022-12-14 01:10:57] Merging 1 fragment for toplevels.
+[2022-12-14 01:10:57] Merging 1 fragment for stmts.
+[2022-12-14 01:10:57] Merging 1 fragment for stmt_containers.
+[2022-12-14 01:10:57] Merging 1 fragment for exprs.
+[2022-12-14 01:10:57] Merging 1 fragment for enclosing_stmt.
+[2022-12-14 01:10:57] Merging 1 fragment for expr_containers.
+[2022-12-14 01:10:57] Merging 1 fragment for scopenodes.
+[2022-12-14 01:10:57] Merging 1 fragment for scopenesting.
+[2022-12-14 01:10:57] Merging 1 fragment for variables.
+[2022-12-14 01:10:57] Merging 1 fragment for literals.
+[2022-12-14 01:10:57] Merging 1 fragment for decl.
+[2022-12-14 01:10:57] Merging 1 fragment for is_arguments_object.
+[2022-12-14 01:10:57] Merging 1 fragment for regexpterm.
+[2022-12-14 01:10:57] Merging 1 fragment for regexp_const_value.
+[2022-12-14 01:10:57] Merging 1 fragment for bind.
+[2022-12-14 01:10:57] Merging 1 fragment for properties.
+[2022-12-14 01:10:57] Merging 1 fragment for is_greedy.
+[2022-12-14 01:10:57] Merging 1 fragment for is_inverted.
+[2022-12-14 01:10:57] Merging 1 fragment for char_class_escape.
+[2022-12-14 01:10:57] Merging 1 fragment for array_size.
+[2022-12-14 01:10:57] Merging 1 fragment for is_capture.
+[2022-12-14 01:10:57] Merging 1 fragment for jump_targets.
+[2022-12-14 01:10:57] Merging 1 fragment for xmlAttrs.
+[2022-12-14 01:10:57] Merging 1 fragment for xml_element_parent_expression.
+[2022-12-14 01:10:57] Merging 1 fragment for entry_cfg_node.
+[2022-12-14 01:10:57] Merging 1 fragment for exit_cfg_node.
+[2022-12-14 01:10:57] Merging 1 fragment for successor.
+[2022-12-14 01:10:57] Merging 1 fragment for guard_node.
+[2022-12-14 01:10:57] Merging 1 fragment for toplevel_parent_xml_node.
+[2022-12-14 01:10:57] Merging 1 fragment for xmlComments.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_tags.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_tag_descriptions.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_tag_names.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_type_exprs.
+[2022-12-14 01:10:57] Merging 1 fragment for is_externs.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_prefix_qualifier.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_errors.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_record_field_name.
+[2022-12-14 01:10:57] Merging 1 fragment for jsdoc_has_new_parameter.
+[2022-12-14 01:10:57] Merging 1 fragment for is_module.
+[2022-12-14 01:10:57] Merging 1 fragment for is_nodejs.
+[2022-12-14 01:10:57] Merging 1 fragment for sourceLocationPrefix.
+[2022-12-14 01:10:57] Saving string and id pools to disk.
+[2022-12-14 01:10:57] Finished importing trap files.
+[2022-12-14 01:10:57] Pausing evaluation to close the cache at sequence stamp o+3
+[2022-12-14 01:10:57] The disk cache is freshly trimmed; leave it be.
+[2022-12-14 01:10:57] Unpausing evaluation
+[2022-12-14 01:10:57] Plumbing command codeql dataset import completed.
+[2022-12-14 01:10:57] [PROGRESS] database finalize> TRAP import complete (3.3s).
+[2022-12-14 01:10:58] Running plumbing command: codeql database cleanup --mode=normal -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript
+[2022-12-14 01:10:58] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2022-12-14 01:10:58] [PROGRESS] database cleanup> TRAP files cleaned up (12ms).
+[2022-12-14 01:10:58] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2022-12-14 01:10:58] [PROGRESS] database cleanup> Scratch directory cleaned up (0ms).
+[2022-12-14 01:10:58] Running plumbing command: codeql dataset cleanup --mode=normal -- /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript
+[2022-12-14 01:10:58] [PROGRESS] dataset cleanup> Cleaning up dataset in /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript.
+[2022-12-14 01:10:58] Trimming disk cache at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript/default/cache in mode normal.
+[2022-12-14 01:10:58] Sequence stamp origin is -6377111356681021246
+[2022-12-14 01:10:58] Pausing evaluation to zealously trim disk at sequence stamp o+0
+[2022-12-14 01:10:58] Unpausing evaluation
+[2022-12-14 01:10:58] Trimming completed (1ms): Trimmed disposable data from cache.
+[2022-12-14 01:10:58] Pausing evaluation to close the cache at sequence stamp o+1
+[2022-12-14 01:10:58] The disk cache is freshly trimmed; leave it be.
+[2022-12-14 01:10:58] Unpausing evaluation
+[2022-12-14 01:10:58] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2022-12-14 01:10:58] [PROGRESS] dataset cleanup> Finalizing dataset in /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript
+[2022-12-14 01:10:58] [DETAILS] dataset cleanup> Finished deleting ID pool from /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript/db-javascript (4ms).
+[2022-12-14 01:10:58] Plumbing command codeql dataset cleanup completed.
+[2022-12-14 01:10:58] Plumbing command codeql database cleanup completed with status 0.
+[2022-12-14 01:10:58] Plumbing command codeql database finalize completed.
+[2022-12-14 01:10:58] [PROGRESS] database create> Successfully created database at /home/user/asf/cloner/gh/clones/A_gsa_mygov-account-php-sdk/codeql_db_javascript.
+[2022-12-14 01:10:58] Terminating normally.
